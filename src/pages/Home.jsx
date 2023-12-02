@@ -4,6 +4,7 @@ import Carousel from '../Component/Carousel';
 import Cards from '../Component/Cards';
 import Marrige from '../Component/Marrige';
 import Form from '../Component/Form';
+import Footer from '../Component/Footer';
 
 
 
@@ -16,6 +17,7 @@ function Home() {
       <Marrige />
       <Cards />
       <Form />
+      <Footer />
     </div>
   )
 }
