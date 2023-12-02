@@ -1,8 +1,13 @@
 
 import React, { useState } from 'react';
 import { Input, Button } from "@nextui-org/react";
+import { useInView } from 'react-intersection-observer';
+import "../css/Animated.css"
 
 function Form() {
+    const [refX, inViewX] = useInView({ triggerOnce: true });
+    const [refY, inViewY] = useInView({ triggerOnce: true });
+    const [refZ, inViewZ] = useInView({ triggerOnce: true });
 
     const [name, setName] = useState('');
     const [place, setPlace] = useState('');
@@ -14,15 +19,15 @@ function Form() {
     const sizes = ["sm"];
 
     const handleSubmit = ()=>{
-        alert('hai')
+        alert('sorry this site is undet construction call this number 9544345344')
     }
 
     return (
         <div className="flex justify-center mt-8 mb-8">
-            <div className="w-full max-w-screen-lg mt-3">
+            <div className="w-full max-w-screen-lg mt-3 ">
                 {sizes.map((size) => (
-                    <div key={size} className="flex flex-wrap -mx-4 mb-6 md:mb-0 mt-2">
-                        <div className={`w-full md:w-1/2 px-4 mb-4 md:mb-0 mt-2 ${size !== 'sm' ? 'md:flex' : ''}`}>
+                    <div key={size} className="flex flex-wrap -mx-4 mb-6 md:mb-0 mt-2 animated-grid">
+                        <div className={`w-full md:w-1/2 px-4 mb-4 md:mb-0 mt-2 ${inViewX ? 'content-x' : ''} ${size !== 'sm' ? 'md:flex' : ''}`}>
                             <Input
                                 size={size}
                                 type="Name"
@@ -40,7 +45,7 @@ function Form() {
                                 value={place}
                                 onChange={(e) => { setPlace(e.target.value) }} />
                         </div>
-                        <div className={`w-full md:w-1/2 px-4 mb-4 md:mb-0  mt-2 ${size !== 'sm' ? 'md:flex' : ''}`}>
+                        <div className={`w-full md:w-1/2 px-4 mb-4 md:mb-0  mt-2 ${size !== 'sm' ? 'md:flex' : ''} `}>
                             <Input
                                 size={size}
                                 type="Phone"

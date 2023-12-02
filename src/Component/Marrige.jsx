@@ -18,7 +18,7 @@ function Marrige() {
           style={{ backgroundImage: "url(https://res.cloudinary.com/dk1eug9ms/image/upload/v1701287046/cassia/Untitled_rjjvzb.jpg)" }}
           className="flex flex-col sm:flex-row justify-between animated-grid dimming-bg rounded-xl shadow-sm   ">
             <div
-              className={`w-full sm:w-[50%] dimming-bg p-2  mb-4 sm:mb-0 content-x ${inViewX ? 'content-x' : ''}`}
+              className={`w-full sm:w-[50%] dimming-bg p-2  mb-4 sm:mb-0  ${inViewX ? 'content-x' : ''}`}
               ref={refX}
             >
               <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">
