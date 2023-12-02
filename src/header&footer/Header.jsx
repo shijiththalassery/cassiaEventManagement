@@ -1,22 +1,30 @@
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuItem, NavbarMenuToggle,
-    NavbarMenu} from "@nextui-org/react";
-import {AcmeLogo} from "./AcmeLogo.jsx";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+  NavbarMenu
+} from "@nextui-org/react";
+import { AcmeLogo } from "./AcmeLogo.jsx";
+import { useLocation } from 'react-router-dom';
+
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Home",
+    "Gallery",
+    "Contact us",
+    "About",
   ];
 
   return (
@@ -28,35 +36,30 @@ export default function Header() {
         />
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
+
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
+        <NavbarItem isActive={currentPath === '/'}>
+          <Link color="foreground" href="/">
+            Home
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={currentPath === '/gallery'}>
+          <Link color="foreground" href="/gallery" >
             Gallery
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+        <NavbarItem isActive={currentPath === '/contactUs'}>
+          <Link color="foreground" href="/contactUs" >
             Contact us
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
+        <NavbarItem isActive={currentPath === '/aboutUs'}>
+          <Link color="foreground" href="/aboutUs">
             About
           </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>

@@ -1,0 +1,72 @@
+/* AnimatedGrid.css */
+@keyframes slideInYL {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInYR {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInX {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInXR {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animated-grid {
+    overflow: hidden; /* Add this line to clip the overflowing content */
+  }
+  
+  .animated-grid > .content-y {
+    animation: slideInYL 2s ease-out forwards;
+  }
+  .animated-grid > .content-yr {
+    animation: slideInYR 2s ease-out forwards;
+  }
+  
+  .animated-grid > .content-x {
+    animation: slideInX 2s ease-out forwards;
+  }
+
+  .animated-grid > .content-xr {
+    animation: slideInXR 2s ease-out forwards;
+  }
+  
+
+  @keyframes dimming {
+    0% {
+      background-color: rgba(255, 255, 0, 0.3); /* Initial dimmed yellow background color */
+    }
+    50% {
+      background-color: rgba(255, 255, 0, 0.1); /* Brightened yellow background color */
+    }
+    100% {
+      background-color: rgba(255, 255, 0, 0.3); /* Final dimmed yellow background color */
+    }
+  }
+  
+  .dimming-bg {
+    animation: dimming 3s infinite; /* Adjust the duration as needed */
+  }

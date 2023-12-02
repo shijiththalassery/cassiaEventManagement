@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Header from '../header&footer/Header';
-import { Avatar, AvatarGroup, AvatarIcon } from "@nextui-org/react";
+import Carousel from '../Component/Carousel';
+import Cards from '../Component/Cards';
+import Marrige from '../Component/Marrige';
+import Form from '../Component/Form';
+
+
 
 function Home() {
-  return (
-    <div>
-        <Header />
-        <h1 className='uppercase text-3xl'>hiiiii</h1>
 
+  return (
+    <div className='border border-black mx-auto'>
+      <Header />
+      <Carousel />
+      <Marrige />
+      <Cards />
+      <Form />
     </div>
   )
 }
 
-export default Home
+export default Home;
