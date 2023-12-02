@@ -1,11 +1,11 @@
 /* Carousel.css */
 /* Carousel.css */
-.visible {
+.fade-in {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
-.invisible {
+.fade-out {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }

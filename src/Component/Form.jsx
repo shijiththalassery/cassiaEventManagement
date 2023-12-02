@@ -19,7 +19,7 @@ function Form() {
     const sizes = ["sm"];
 
     const handleSubmit = ()=>{
-        alert('sorry this site is undet construction call this number 9544345344')
+        alert('sorry this site is under construction call this number 9544345344')
     }
 
     return (

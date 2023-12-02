@@ -15,10 +15,10 @@ function Marrige() {
       <div className="flex justify-center mt-8 mb-8">
         <div className="w-full max-w-screen-lg mt-3">
           <div 
-          style={{ backgroundImage: "url(https://res.cloudinary.com/dk1eug9ms/image/upload/v1701287046/cassia/Untitled_rjjvzb.jpg)" }}
+          style={{ backgroundImage: "url(https://th.bing.com/th/id/OIP.NqySBxK6y99SWUSAojl7vgAAAA?rs=1&pid=ImgDetMain)" }}
           className="flex flex-col sm:flex-row justify-between animated-grid dimming-bg rounded-xl shadow-sm   ">
             <div
-              className={`w-full sm:w-[50%] dimming-bg p-2  mb-4 sm:mb-0  ${inViewX ? 'content-x' : ''}`}
+              className={`w-full sm:w-[50%] dimming-bg p-4  mb-4 sm:mb-0  ${inViewX ? 'content-x' : ''}`}
               ref={refX}
             >
               <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">
@@ -44,7 +44,7 @@ function Marrige() {
             </div>
 
             <div
-              className={`w-full sm:w-[50%] pt-2 pb-2 pe-2 content-xr ${inViewY ? 'content-xr' : ''}`}
+              className={`w-full sm:w-[50%] pt-4 pb-4 pe-4 content-xr ${inViewY ? 'content-xr' : ''}`}
               ref={refY}
             >
               <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">

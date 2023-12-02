@@ -15,7 +15,7 @@ function Cards() {
       <div className="flex justify-center">
         <div className="w-full max-w-screen-lg mt-3">
           <div
-            style={{ backgroundImage: "url(https://res.cloudinary.com/dk1eug9ms/image/upload/v1701287046/cassia/Untitled_rjjvzb.jpg)" }}
+            style={{ backgroundImage: "url(https://th.bing.com/th/id/R.3c55f7277b8f04faa3daf39d5fe7f58b?rik=TQGzH2w2VFxvxA&riu=http%3a%2f%2fbestanimations.com%2fmedia%2fsparklers%2f1812641955fireworks-sparkler-animation-26.gif&ehk=Dk%2b09RqyPxDwRg3gmpSBnf3EC9Wg%2frsbLMw02N%2bAv1U%3d&risl=&pid=ImgRaw&r=0)" }}
             className="flex flex-col sm:flex-row justify-between animated-grid dimming-bg rounded-xl shadow-sm   ">
             <div
               className={`w-full sm:w-[40%] dimming-bg p-2  mb-4 sm:mb-0  ${inViewX ? 'content-xr' : ''}`}
