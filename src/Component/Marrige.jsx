@@ -24,23 +24,22 @@ function Marrige() {
               <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">
                 <CardHeader className="absolute z-10 top-1 flex-col items-start">
                   <p className="text-tiny text-white/60 uppercase font-bold">New</p>
-                  <h4 className="text-black font-medium text-2xl">Birth Day</h4>
+                  <h4 className="text-black font-medium text-base font-sans">
+                  "At Cassia, we specialize in crafting timeless moments for your most cherished occasions. 
+                  Whether it's the joy of a marriage, the warmth of a birthday, the enduring love of an anniversary,
+                   or the promise of a beautiful engagement, we are dedicated to making each celebration uniquely special.
+                    Our commitment is to transform ordinary moments into extraordinary memories, marking milestones with love,
+                     laughter, and a touch of elegance. Let Cassia be your partner in crafting unforgettable experiences 
+                     that celebrate life's beautiful journey"
+                  </h4>
                 </CardHeader>
                 <Image
                   removeWrapper
                   alt="Card example background"
                   className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
-                  src="https://thumbs.dreamstime.com/b/indian-children-birthday-6277900.jpg"
+                  src="https://i.pinimg.com/474x/90/7f/13/907f135e046add9ddd187b49697ea527.jpg"
                 />
-                <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-                  <div>
-                    <p className="text-black text-tiny">Available soon.</p>
-                    <p className="text-black text-tiny">Get notified.</p>
-                  </div>
-                  <Button className="text-tiny" color="primary" radius="full" size="sm">
-                    Notify Me
-                  </Button>
-                </CardFooter>
+        
               </Card>
             </div>
 
@@ -57,7 +56,7 @@ function Marrige() {
                   removeWrapper
                   alt="Card example background"
                   className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
-                  src="https://i.ytimg.com/vi/NYvx2BUbjvE/maxresdefault.jpg"
+                  src="https://cdn0.weddingwire.in/articles/images/7/2/8/3/img_33827/t20_kerala-marriage-photos-lumiere-wedding-company-lead-image.jpg"
                 />
                 <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
                   <div>

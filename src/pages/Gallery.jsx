@@ -19,10 +19,10 @@ function Gallery() {
 
       <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 w-full h-1/2 animated-grid '>
         <div className='col-span-1 w-full h-full border border-red-500 content-x text-center'>
-          <h1>hai this is sreya</h1>
-          <h1>from sreyas</h1>
-          <h1>koorara</h1>
-          <h1>thalassery</h1>
+          <h1>hai this is shiji</h1>
+          <h1>from bangalore</h1>
+          <h1>hsr lay out</h1>
+          <h1>karnataka</h1>
         </div>
         <div className='col-span-1 w-full h-full border border-red-500 content-y text-center'>
           <h1>hai this is shijith</h1>
@@ -31,8 +31,6 @@ function Gallery() {
           <h1>thalassery</h1>
         </div>
       </div>
-
-
 
 
       <div className="flex justify-center">
