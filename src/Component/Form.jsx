@@ -2,9 +2,15 @@
 import React, { useState } from 'react';
 import { Input, Button } from "@nextui-org/react";
 import { useInView } from 'react-intersection-observer';
-import "../css/Animated.css"
+import "../css/Animated.css";
+import axios from 'axios'
+import { useResetProjection } from 'framer-motion';
 
+
+
+const apiUrl = import.meta.env.VITE_API_URL;
 function Form() {
+
     const [refX, inViewX] = useInView({ triggerOnce: true });
     const [refY, inViewY] = useInView({ triggerOnce: true });
     const [refZ, inViewZ] = useInView({ triggerOnce: true });
@@ -18,9 +24,21 @@ function Form() {
 
     const sizes = ["sm"];
 
-    const handleSubmit = ()=>{
-        alert('sorry this site is under construction call this number 9544345344')
+    const handleSubmit = async () => {
+        const reciever = '9567260882'; // Replace with your actual WhatsApp number
+        const one = 'thottummal';
+        const two = 'marrige';
+        const three = '4567788';
+        const name = 'shijith'
+
+        const action = `https://wa.me/${reciever}?text=${encodeURIComponent(
+          `${name} ${one} ${two} ${three}  `
+        )}`;
+    
+        window.open(action, '_blank');
     }
+
+
 
     return (
         <div className="flex justify-center mt-8 mb-8">
@@ -70,7 +88,7 @@ function Form() {
                                 aria-label="Select location option"
                                 onChange={(e) => {
                                     setDistrict(e.target.value);
-                                    
+
                                 }}
                                 value={district} // This ensures that the selected value is controlled by the state
                             >
@@ -96,7 +114,7 @@ function Form() {
                                 aria-label="Select event option"
                                 onChange={(e) => {
                                     setEvent(e.target.value);
-                                    
+
                                 }}
                                 value={event} // This ensures that the selected value is controlled by the state
                             >
