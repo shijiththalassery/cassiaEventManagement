@@ -27,6 +27,7 @@ function Form() {
     const sizes = ["sm"];
 
     const handleSubmit = async () => {
+        let results ;
         const postData = {
             name: name,
             place: place,
@@ -55,17 +56,16 @@ function Form() {
                 else if (!/^[6-9]\d{9}$/.test(postData.phone)) {
                     toast.warn('Please Enter Correct Phone Number');
                     toast.warn('No need to add country code');
+                }else{
+                   const respond =  axios.post('http://localhost:5000/sendMessage', postData).
+                   then((result)=>{
+                   toast.success('Your inquiry has been submitted')
+                   }).catch((error)=>{
+                    console.log(error,'this is the error from back end')
+                    toast.error('Your inquiry is not submitted')
+                   })
                 }
             }
-
-            axios.post('http://localhost:5000/sendMessage', postData)
-                .then(response => {
-                    console.log('Response:', response.data);
-                    toast.success('okey')
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
 
         } catch (error) {
             console.log(error)
