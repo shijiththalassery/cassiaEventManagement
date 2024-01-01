@@ -5,6 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import "../css/Animated.css";
 import axios from 'axios'
 import { useResetProjection } from 'framer-motion';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -25,19 +27,50 @@ function Form() {
     const sizes = ["sm"];
 
     const handleSubmit = async () => {
-        const reciever = '9567260882'; // Replace with your actual WhatsApp number
-        const one = 'thottummal';
-        const two = 'marrige';
-        const three = '4567788';
-        const name = 'shijith'
+        const postData = {
+            name: name,
+            place: place,
+            email: email,
+            phone: phone,
+            district: district,
+            event: event
+        }
+        try {
+            if (postData) {
+                if (postData.name === "") {
+                    toast.warn('Please Enter your Name');
+                }
+                if (postData.place === "") {
+                    toast.warn('Please Enter your Place');
+                }
+                if (postData.district === "") {
+                    toast.warn('Please Select your district');
+                }
+                if (postData.event === "") {
+                    toast.warn('Please Select your Event');
+                }
+                if (!postData.email.includes('@')) {
+                    toast.warn('Please Enter Correct Email');
+                }
+                else if (!/^[6-9]\d{9}$/.test(postData.phone)) {
+                    toast.warn('Please Enter Correct Phone Number');
+                    toast.warn('No need to add country code');
+                }
+            }
 
-        const action = `https://wa.me/${reciever}?text=${encodeURIComponent(
-          `${name} ${one} ${two} ${three}  `
-        )}`;
-    
-        window.open(action, '_blank');
+            axios.post('http://localhost:5000/sendMessage', postData)
+                .then(response => {
+                    console.log('Response:', response.data);
+                    toast.success('okey')
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+        } catch (error) {
+            console.log(error)
+        }
     }
-
 
 
     return (
@@ -92,20 +125,21 @@ function Form() {
                                 }}
                                 value={district} // This ensures that the selected value is controlled by the state
                             >
-                                <option value="option1">Trivandrum</option>
-                                <option value="option2">Kollam</option>
-                                <option value="option3">Kottayam</option>
-                                <option value="option1">Alappuzha</option>
-                                <option value="option2">Pathanam titta</option>
-                                <option value="option3">Ernakulam</option>
-                                <option value="option1">Palakkad</option>
-                                <option value="option2">Idukki</option>
-                                <option value="option3">Thrissure</option>
-                                <option value="option1">Malappuram</option>
-                                <option value="option2">Kozhikkode</option>
-                                <option value="option3">Wayanad</option>
-                                <option value="option1">Kannur</option>
-                                <option value="option2">Kasargod</option>
+                                <option value="">District</option>
+                                <option value="Trivandrum">Trivandrum</option>
+                                <option value="Kollam">Kollam</option>
+                                <option value="Kottayam">Kottayam</option>
+                                <option value="Alappuzha">Alappuzha</option>
+                                <option value="Pathanamtitta">Pathanamtitta</option>
+                                <option value="Ernakulam">Ernakulam</option>
+                                <option value="Palakkad">Palakkad</option>
+                                <option value="Idukki">Idukki</option>
+                                <option value="Thrissure">Thrissure</option>
+                                <option value="Malappuram">Malappuram</option>
+                                <option value="Kozhikkode">Kozhikkode</option>
+                                <option value="Wayanad">Wayanad</option>
+                                <option value="Kannur">Kannur</option>
+                                <option value="Kasargod">Kasargod</option>
                             </select>
                         </div>
                         <div className={`w-full md:w-1/2 px-4 mb-4 md:mb-0 mt-2 ${size !== 'sm' ? 'md:flex' : ''}`}>
@@ -118,9 +152,10 @@ function Form() {
                                 }}
                                 value={event} // This ensures that the selected value is controlled by the state
                             >
-                                <option value="option1">Marrige</option>
-                                <option value="option2">Birth Day</option>
-                                <option value="option3">Naming Ceremony</option>
+                                <option value="">Event</option>
+                                <option value="Marrige">Marrige</option>
+                                <option value="Birth Day">Birth Day</option>
+                                <option value="Naming Ceremony">Naming Ceremony</option>
                             </select>
                         </div>
                     </div>
@@ -131,6 +166,7 @@ function Form() {
                     </Button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }
