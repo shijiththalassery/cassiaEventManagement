@@ -57,7 +57,7 @@ function Form() {
                     toast.warn('Please Enter Correct Phone Number');
                     toast.warn('No need to add country code');
                 }else{
-                   const respond =  axios.post('http://localhost:5000/sendMessage', postData).
+                   const respond =  axios.post('https://cassiaeventmanagement.onrender.com/sendMessage', postData).
                    then((result)=>{
                    toast.success('Your inquiry has been submitted')
                    }).catch((error)=>{
